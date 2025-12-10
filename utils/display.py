@@ -13,7 +13,7 @@ def print_secao(texto):
     """Imprime uma seção"""
     numero = texto.split('.')[0] if '.' in texto else ""
     titulo = texto.split('. ')[1] if '. ' in texto else texto
-    print(f"\n{Fore.GREEN}{numero}{Fore.WHITE}{'▶ ' if not numero else ''}{Style.BRIGHT}{titulo}")
+    print(f"\n{Fore.GREEN}{numero}. {Fore.WHITE}{'▶ ' if not numero else ''}{Style.BRIGHT}{titulo}")
     print(f"{Fore.LIGHTBLACK_EX}{'─' * 40}")
 
 def print_sucesso(texto):

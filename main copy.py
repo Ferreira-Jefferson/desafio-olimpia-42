@@ -39,22 +39,35 @@ def main():
     }
     
     # Busca informações da empresa
-    print_secao("1. BUSCANDO INFORMAÇÕES DA EMPRESA")
+    print_secao("1.BUSCANDO INFORMAÇÕES DA EMPRESA")
     info = obter_resumo_empresa(empresa)
     if info['status'] == 'sucesso':
         dados_coletados['info'] = info['dados']
+        print_sucesso(f"✓ Informações obtidas: {info['dados']['nome']}")
+    else:
+        print_erro(f"✗ {info['mensagem']}")
     
     # Busca cotação
     print_secao("2. BUSCANDO COTAÇÃO ATUAL")
     cotacao = obter_cotacao_atual(empresa)
     if cotacao['status'] == 'sucesso':
         dados_coletados['cotacao'] = cotacao
+        print_cotacao(cotacao)
+    else:
+        print_erro(f"✗ {cotacao['mensagem']}")
     
     # Busca notícias
     print_secao("3. BUSCANDO NOTÍCIAS RECENTES")
     noticias = buscar_noticias_rss(empresa)
     dados_coletados['noticias'] = noticias
-        
+    
+    if noticias:
+        print_sucesso(f"✓ Encontradas {len(noticias)} notícias")
+        for i, noticia in enumerate(noticias[:3], 1):
+            print(f"{Fore.WHITE}  {i}. {noticia['titulo'][:80]}...")
+    else:
+        print_erro("✗ Nenhuma notícia encontrada")
+    
     # 2. Processa com Gemini
     print_secao("4. GERANDO RELATÓRIO COM LANGCHAIN + GEMINI")
     
