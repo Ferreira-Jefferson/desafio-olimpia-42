@@ -40,6 +40,7 @@ Retorne APENAS o seguinte JSON válido:
             "titulo": "",
             "fonte": "",
             "resumo": ""
+			"link": ""
         }}
     ],
     "acao": {{
@@ -88,6 +89,6 @@ Retorne APENAS o seguinte JSON válido:
 3. NOTÍCIAS:
 """
         for n in dados.get("noticias", []):
-            out += f"- {n.get('titulo', '')} ({n.get('fonte', '')})\n"
+            out += f"- {n.get('titulo', '')} ({n.get('fonte', '')})[{n.get('link', '')}]\n"
 
         return out

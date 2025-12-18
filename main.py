@@ -116,6 +116,7 @@ def exibir_relatorio(dados_json, dados_brutos):
     for i, noticia in enumerate(dados_json['noticias'], 1):
         print(f"\n{Fore.YELLOW}{i}. {noticia['titulo']}")
         print(f"{Fore.LIGHTBLACK_EX}Fonte: {noticia['fonte']}")
+        print(f"{Fore.LIGHTBLACK_EX}Link: {noticia['link']}")
         if 'resumo' in noticia:
             print(f"{Fore.WHITE}{noticia['resumo']}")
     
