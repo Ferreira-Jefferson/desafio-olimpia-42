@@ -8,10 +8,20 @@ from modules.cotacao import obter_cotacao_atual
 from modules.noticia import buscar_noticias_rss
 from modules.gemini import GeminiProcessor
 
+# CSS para mudar a cor da borda do input
+st.markdown("""
+    <style>
+    div[data-baseweb="input"] > div {
+        border-color: #4CAF50; /* verde */
+        box-shadow: 0 0 0 1px #4CAF50;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 # --------------------------
 # Configuração da página
 # --------------------------
-st.set_page_config(page_title="Relatório de Empresas", layout="wide")
+st.set_page_config(page_title="Relatório Investment Banking", layout="wide")
 
 # --------------------------
 # Utilitários
