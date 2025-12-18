@@ -1,13 +1,24 @@
+# LangChain e Gemini
 langchain>=0.3.0
 langchain-google-genai>=1.0.0
 langchain-core>=0.3.0
 langchain-community>=0.3.0
-
 google-generativeai>=0.7.0
 
+# Financeiro e scraping
 yfinance>=0.2.36
 feedparser>=6.0.10
 requests>=2.31.0
 beautifulsoup4>=4.12.2
+
+# Utilidades
 colorama>=0.4.6
 python-dotenv>=1.0.0
+
+# Frontend
+streamlit>=1.40.0
+
+# Dependências auxiliares usadas pelo yfinance e scraping
+pandas>=2.0.0
+numpy>=1.24.0
+lxml>=4.9.0
