@@ -149,10 +149,10 @@ def build_report_layout(dados_json, dados_brutos):
 # --------------------------
 # Interface principal
 # --------------------------
-st.title("📊 Pesquisa Automatizada de Empresas")
-st.write("Sistema de análise preliminar para Investment Banking")
+st.title("📊 Sistema de análise preliminar via IA")
+st.write("By: Investment Banking")
 
-empresa = st.text_input("Digite o nome da empresa brasileira:", "Vale")
+empresa = st.text_input("Digite o nome da empresa brasileira:", placeholder="Petrobras, Vale, Itaú, Minerva, Ambev, ...")
 gerar = st.button("Gerar relatório")
 
 if gerar and empresa.strip():
