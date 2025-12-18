@@ -1,7 +1,7 @@
 import sys
 import json
 from datetime import datetime
-from modules.historia import obter_resumo_empresa
+from modules.infos import obter_resumo_empresa
 from modules.noticia import buscar_noticias_rss
 from modules.cotacao import obter_cotacao_atual
 from modules.gemini import GeminiProcessor

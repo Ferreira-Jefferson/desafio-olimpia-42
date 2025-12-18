@@ -3,7 +3,7 @@ from datetime import datetime
 
 import streamlit as st
 
-from modules.historia import obter_resumo_empresa
+from modules.infos import obter_resumo_empresa
 from modules.cotacao import obter_cotacao_atual
 from modules.noticia import buscar_noticias_rss
 from modules.gemini import GeminiProcessor
