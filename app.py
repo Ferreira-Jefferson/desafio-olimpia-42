@@ -8,6 +8,23 @@ from modules.cotacao import obter_cotacao_atual
 from modules.noticia import buscar_noticias_rss
 from modules.gemini import GeminiProcessor
 
+# CSS para mudar a cor da borda do input
+st.markdown("""
+    <style>
+    /* Seleciona o input de texto do Streamlit */
+    div[data-baseweb="input"] input {
+        border: 2px solid #2196F3;   /* azul */
+        border-radius: 6px;
+        padding: 6px;
+    }
+    div[data-baseweb="input"] input:focus  {
+        border: 2px solid #2196F3;   /* azul */
+        border-radius: 6px;
+        padding: 6px;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 # --------------------------
 # Configuração da página
 # --------------------------
@@ -149,33 +166,11 @@ def build_report_layout(dados_json, dados_brutos):
 # --------------------------
 # Interface principal
 # --------------------------
-
-st.markdown("""
-    <style>
-    /* Seleciona o input de texto do Streamlit */
-    div[data-baseweb="input"] input {
-        border: 2px solid #2196F3;   /* azul */
-        border-radius: 6px;
-        padding: 6px;
-    }
-    div[data-baseweb="input"] input:focus {
-        border: 2px solid #4CAF50;   /* verde quando focado */
-        outline: none;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-
 st.title("📊 Sistema de análise preliminar via IA")
 st.write("By: Investment Banking")
 
 empresa = st.text_input("Digite o nome da empresa brasileira:", placeholder="Petrobras, Vale, Itaú, Minerva, Ambev, ...")
 gerar = st.button("Gerar relatório")
-
-# Enter no campo também dispara
-if empresa and st.session_state.get("empresa") != empresa:
-    st.session_state["empresa"] = empresa
-    gerar = True
 
 if gerar and empresa.strip():
     with st.status("Iniciando...", expanded=True) as status:
