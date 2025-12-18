@@ -19,6 +19,8 @@ python-dotenv>=1.0.0
 streamlit>=1.40.0
 
 # Dependências auxiliares usadas pelo yfinance e scraping
-pandas>=2.0.0
-numpy>=1.24.0
-lxml>=4.9.0
+pandas>=1.5
+numpy>=1.23
+lxml>=4.8
+certifi>=2023.7.22
+urllib3>=2.0.0
